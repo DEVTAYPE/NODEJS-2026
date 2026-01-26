@@ -18,14 +18,18 @@
 //   console.log(user);
 // });
 
-const { buildPersonFactory } = require("./js-foundation/04-factory");
+// const { buildPersonFactory } = require("./js-foundation/04-factory");
 
-const { getUUID, getAge } = require("./plugins");
+// const { getUUID, getAge } = require("./plugins");
 
-const buildPerson = buildPersonFactory({ getUUID, getAge });
+// const buildPerson = buildPersonFactory({ getUUID, getAge });
 
-const juan = buildPerson({ name: "Juan", birthdate: "1990-01-01" });
-const maria = buildPerson({ name: "Maria", birthdate: "1985-05-15" });
+// const juan = buildPerson({ name: "Juan", birthdate: "1990-01-01" });
+// const maria = buildPerson({ name: "Maria", birthdate: "1985-05-15" });
 
-console.log(juan);
-console.log(maria);
+// console.log(juan);
+// console.log(maria);
+
+const { getPokemonById } = require("./js-foundation/05-promises");
+
+getPokemonById(1);
