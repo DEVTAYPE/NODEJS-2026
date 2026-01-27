@@ -1,6 +1,8 @@
 // console.log("Hola Mundo");
 // const { emailTemplate } = require("./js-foundation/01-template");
 
+const { buildLogger } = require("./plugins");
+
 // console.log(emailTemplate);
 // console.log("Hello from app.js with nodemon!");
 
@@ -30,6 +32,11 @@
 // console.log(juan);
 // console.log(maria);
 
-const { getPokemonById } = require("./js-foundation/05-promises");
+// const { getPokemonById } = require("./js-foundation/05-promises");
 
-getPokemonById(1);
+// getPokemonById(1);
+
+const logger = buildLogger("app-service");
+
+logger.log("Application has started");
+logger.error("This is a sample error message");
