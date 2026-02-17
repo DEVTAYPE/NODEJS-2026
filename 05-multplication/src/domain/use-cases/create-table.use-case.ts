@@ -19,6 +19,10 @@ export class CreateTableUseCase implements ICreateTableUseCase {
     const { base, limit = 10 } = options;
 
     for (let i = 1; i <= limit; i++) {
+      if (i === limit) {
+        outputMessage += `${base} x ${i} = ${base * i}`;
+        continue;
+      }
       outputMessage += `${base} x ${i} = ${base * i}\n`;
     }
 

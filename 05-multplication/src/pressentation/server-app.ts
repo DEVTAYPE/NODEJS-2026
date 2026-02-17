@@ -9,7 +9,7 @@ export interface IRunOptions {
   directory: string;
 }
 
-export class SeverApp {
+export class ServerApp {
   static run(args: IRunOptions) {
     console.log("Server is running...");
 
