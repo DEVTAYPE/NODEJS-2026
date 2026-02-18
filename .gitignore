@@ -8,3 +8,6 @@
 */**/outputs
 */**/output
 */**/output-new
+
+/logs
+/.env
