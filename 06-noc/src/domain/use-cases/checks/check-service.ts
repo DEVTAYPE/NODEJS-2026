@@ -23,10 +23,11 @@ export class CheckService implements ICheckServiceUseCase {
         throw new Error(`Failed to fetch ${url}`);
       }
 
-      const log = new LogEntity(
-        ELogSeverityLevel.low,
-        `Checked URL: ${url} - Status: ${req.status}`,
-      );
+      const log = new LogEntity({
+        level: ELogSeverityLevel.low,
+        message: `Checked URL: ${url} - Status: ${req.status}`,
+        origin: "CheckService",
+      });
 
       this.onSuccess();
       this.logRepository.saveLog(log);
@@ -34,10 +35,11 @@ export class CheckService implements ICheckServiceUseCase {
       return true;
     } catch (error) {
       const errMsg = error instanceof Error ? error.message : String(error);
-      const log = new LogEntity(
-        ELogSeverityLevel.high,
-        `Error checking URL: ${url} - Error: ${errMsg}`,
-      );
+      const log = new LogEntity({
+        level: ELogSeverityLevel.high,
+        message: `Error checking URL: ${url} - Error: ${errMsg}`,
+        origin: "CheckService",
+      });
 
       this.logRepository.saveLog(log);
       this.onFailure(error instanceof Error ? error : new Error(String(error)));
