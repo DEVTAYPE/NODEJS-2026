@@ -9,7 +9,7 @@
     // See also https://aka.ms/tsconfig/module
     "module": "ESNext", // o "ES2020", "ES2022", etc.
     "moduleResolution": "node",
-    "types": ["node"],
+    "types": ["node", "jest"],
     // For nodejs:
     "lib": ["esnext", "dom"],
     // and npm install -D @types/node
@@ -36,7 +36,6 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
